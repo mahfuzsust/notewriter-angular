@@ -1,8 +1,16 @@
-<div class="row">
-    <div class="col s3">
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span>Notewriter</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <div fxFlex="30%">
         <app-patientlist></app-patientlist>
     </div>
-    <div class="col s9">
+    <div fxFlex="70%">
         <app-notewriter></app-notewriter>
     </div>
 </div>
+
+      
+      

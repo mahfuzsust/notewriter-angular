@@ -1,5 +1,13 @@
-<button class="btn waves-effect waves-light" (click)="addPatient()">Add Patient</button>
+<mat-form-field>
+	<mat-select placeholder="Dates"  [(value)]="selectedDate">
+		<mat-option *ngFor="let date of dates" [value]="date">
+		{{ date }}
+		</mat-option>
+	</mat-select>
+</mat-form-field>
 
-<ul class="collection">
-	<li class="collection-item" *ngFor="let patient of patients let index" (click)="selectPatient(patient)">{{patient.name}}</li>
-</ul>
+<button mat-button (click)="addPatient()">Add Patient</button>
+
+<mat-list>
+	<mat-list-item class="collection-item" *ngFor="let patient of patients[selectedDate]" (click)="selectPatient(patient)">{{patient.name}}</mat-list-item>
+</mat-list>

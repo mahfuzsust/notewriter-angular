@@ -8,6 +8,7 @@ import { PatientService } from './../patient.service';
 })
 export class NotewriterComponent implements OnInit {
     selectedPatient = {name: "", content: ""};
+    
     constructor(private _patientService: PatientService) {
 
     }

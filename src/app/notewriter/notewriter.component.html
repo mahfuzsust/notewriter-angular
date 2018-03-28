@@ -1,2 +1,5 @@
-<input type="text" [(ngModel)]="selectedPatient.name" (change)="changeName()"/>
+<mat-form-field style="width:100%">
+    <input matInput placeholder="Name" [(ngModel)]="selectedPatient.name" (change)="changeName()"/>
+</mat-form-field>
+
 <ck-editor name="editor1" [(ngModel)]="selectedPatient.content" skin="moono-lisa" language="en" (change)="changeContent()"></ck-editor>
