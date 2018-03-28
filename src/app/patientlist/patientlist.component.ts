@@ -30,13 +30,14 @@ export class PatientlistComponent implements OnInit {
         }
         let counter = this.patients[this.selectedDate].length + 1;
 
-        this.selectedPatient = { name: "Patient " + counter, content: "" };
+        this.selectedPatient = { name: "Patient " + counter, content: "", selected: true };
         
         this.patients[this.selectedDate].push(this.selectedPatient);
         this._patientService.changePatientList(this.patients);
         this._patientService.changeSelectedPatient(this.selectedPatient);
     }
     selectPatient(patient) {
+        this.selectedPatient = patient;
         this._patientService.changeSelectedPatient(patient);
     }
 
@@ -53,5 +54,13 @@ export class PatientlistComponent implements OnInit {
         this.dates.push(this.addDays(new Date(), 1).toDateString());
         this.dates.push(this.addDays(new Date(), 2).toDateString());
     }
-
+    changeDate() {
+        if(!this.patients.hasOwnProperty(this.selectedDate)) {
+            this.patients[this.selectedDate] = [];
+            this.selectedPatient = {};
+        } else {
+            this.selectedPatient = this.patients[this.selectedDate][0];
+        }
+        this._patientService.changeSelectedPatient(this.selectedPatient);
+    }
 }

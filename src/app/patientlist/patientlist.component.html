@@ -1,13 +1,17 @@
 <mat-form-field>
-	<mat-select placeholder="Dates"  [(value)]="selectedDate">
+	<mat-select placeholder="Dates"  [(value)]="selectedDate" (change)="changeDate()">
 		<mat-option *ngFor="let date of dates" [value]="date">
 		{{ date }}
 		</mat-option>
 	</mat-select>
 </mat-form-field>
 
-<button mat-button (click)="addPatient()">Add Patient</button>
+<button mat-button color="primary" (click)="addPatient()">Add Patient</button>
 
 <mat-list>
-	<mat-list-item class="collection-item" *ngFor="let patient of patients[selectedDate]" (click)="selectPatient(patient)">{{patient.name}}</mat-list-item>
+	<mat-list-item
+		style="cursor:pointer;"
+		*ngFor="let patient of patients[selectedDate]" 
+		(click)="selectPatient(patient)"
+		[ngClass]="{'selected': patient.name == selectedPatient.name }" >{{patient.name}}</mat-list-item>
 </mat-list>
