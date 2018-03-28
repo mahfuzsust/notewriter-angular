@@ -7,7 +7,7 @@ import { PatientService } from './../patient.service';
     styleUrls: ['./notewriter.component.css']
 })
 export class NotewriterComponent implements OnInit {
-    private selectedPatient = {};
+    selectedPatient = {name: "", content: ""};
     constructor(private _patientService: PatientService) {
 
     }
