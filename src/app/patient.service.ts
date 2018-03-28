@@ -8,9 +8,16 @@ export class PatientService {
 
 	private patients = new BehaviorSubject<any>([]);
 	patient = this.patients.asObservable();
+
+	private selectedPatient = new BehaviorSubject<any>({});
+	selectedPatientObjervable = this.selectedPatient.asObservable();
 	constructor() { }
 
-	changePatientList(patient) {
-		this.patients.next(patient);
+	changePatientList(patients) {
+		this.patients.next(patients);
+	}
+
+	changeSelectedPatient(patient) {
+		this.selectedPatient.next(patient);
 	}
 }

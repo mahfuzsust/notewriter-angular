@@ -1,1 +1,2 @@
-<ck-editor name="editor1" [(ngModel)]="editorValue" skin="moono-lisa" language="en"></ck-editor>
+<input type="text" [(ngModel)]="selectedPatient.name" (change)="changeName()"/>
+<ck-editor name="editor1" [(ngModel)]="selectedPatient.content" skin="moono-lisa" language="en" (change)="changeContent()"></ck-editor>

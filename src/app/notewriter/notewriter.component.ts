@@ -7,13 +7,19 @@ import { PatientService } from './../patient.service';
     styleUrls: ['./notewriter.component.css']
 })
 export class NotewriterComponent implements OnInit {
-
-    public editorValue: string = 'Hello world';
+    private selectedPatient = {};
     constructor(private _patientService: PatientService) {
 
     }
     ngOnInit() {
+        this._patientService.selectedPatientObjervable.subscribe(res => this.selectedPatient = res);
     }
 
+    changeName() {
+        this._patientService.changeSelectedPatient(this.selectedPatient);
+    }
+    changeContent() {
+        this._patientService.changeSelectedPatient(this.selectedPatient);
+    }
 }
 
