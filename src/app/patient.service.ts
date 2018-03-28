@@ -3,13 +3,14 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class PatientService {
-  private messageSource = new BehaviorSubject<string>("default message");
-  currentMessage = this.messageSource.asObservable();
+	private messageSource = new BehaviorSubject<string>("default message");
+	currentMessage = this.messageSource.asObservable();
 
-  constructor() { }
+	private patients = new BehaviorSubject<any>([]);
+	patient = this.patients.asObservable();
+	constructor() { }
 
-  changeMessage(message: string) {
-    this.messageSource.next(message)
-  }
-
+	changePatientList(patient) {
+		this.patients.next(patient);
+	}
 }

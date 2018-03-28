@@ -8,6 +8,8 @@ import { NotewriterComponent } from './notewriter/notewriter.component';
 import { CKEditorModule } from 'ngx-ckeditor';
 import {FormsModule} from '@angular/forms';
 
+import {PatientService} from './patient.service';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import {FormsModule} from '@angular/forms';
     CKEditorModule,
     FormsModule
   ],
-  providers: [],
+  providers: [PatientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
