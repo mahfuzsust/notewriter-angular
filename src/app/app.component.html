@@ -3,14 +3,17 @@
         <span>Notewriter</span>
     </mat-toolbar-row>
 </mat-toolbar>
-<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-    <div fxFlex="30%">
+
+<div class="container"
+     fxLayout.xs="column"
+     fxLayoutGap="3px"
+     fxLayoutWrap 
+     fxLayoutAlign="center"
+     style="margin-top: 20px; margin-left: 20px; margin-right: 20px;">
+    <div fxFlex="30%" fxOffset="50">
         <app-patientlist></app-patientlist>
     </div>
     <div fxFlex="70%">
         <app-notewriter></app-notewriter>
     </div>
 </div>
-
-      
-      
