@@ -16,7 +16,7 @@ export class PatientlistComponent implements OnInit {
 
     ngOnInit() {
         this.patients[this.selectedDate] = [];
-        this._patientService.patient.subscribe(res => this.patients = res);
+        this._patientService.patientObjervable.subscribe(res => this.patients = res);
         this._patientService.changePatientList(this.patients);
 
         this._patientService.selectedPatientObjervable.subscribe(res => this.selectedPatient);
